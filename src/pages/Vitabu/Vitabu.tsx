@@ -21,29 +21,13 @@ interface BookData {
 }
 
 export const Vitabu = () => {
-  // const [book, setBooks] = useState<any>([]);
-  // const [error, setError] = useState([]);
-
-  // useEffect(() => {
-  //   fetch("http://143.110.186.33:1337/books/get")
-  //     .then((response) => response.json())
-  //     .then((res) => setBooks(res))
-  //     .catch((err) => setError(err));
-  // }, []);
-
-  // console.log("Books", book);
-
-  // const {
-  //   books: [{ title }],
-  // } = book;
-  // console.log(title);
   const [b, setb] = useState<any>([]);
 
   useEffect(() => {
-    const VitabuPromise = fetch("http://143.110.186.33:1337/books/get") //1
-      .then((response) => response.json()) //2
+    fetch("http://143.110.186.33:1337/books/get")
+      .then((response) => response.json())
       .then((kitabu) => {
-        setb(kitabu.books); //3
+        setb(kitabu.books);
       });
   }, []);
   let vitabuMkusanyiko: BookData[] = b;

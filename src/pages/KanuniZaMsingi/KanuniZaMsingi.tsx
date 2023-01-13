@@ -55,8 +55,10 @@ export const KanuniZaMsingi = () => {
         <Image width="100vw" height="100vh" src={Kanuni} />
       </ImageWrapper>
       <Background>
-        <Link to="/">
-          <Icon name="IoArrowBack" size={20} color="white" /> Rudi
+        <Link to="/" style={{ textDecoration: "none" }}>
+          <RudiNyuma>
+            <Icon name="IoArrowBack" size={20} color="white" /> Rudi
+          </RudiNyuma>
         </Link>
         <TitleText>Kanuni za Msingi za SEVENTH DAY REFORMED REMNANTS</TitleText>
         <PreNormalText>
