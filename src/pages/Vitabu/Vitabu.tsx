@@ -1,7 +1,9 @@
 import React, { useCallback, useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { Card, Image } from "../../components";
 import { Button } from "../../components/Buttons/Button";
+import { ButtonRedirect } from "../../components/Buttons/ButtonRedirect";
 import { Icon } from "../../components/Icons";
 import Vijitabu from "./vitabu.jpg";
 interface Kitabu {
@@ -48,29 +50,36 @@ export const Vitabu = () => {
   console.log("Vitabu", vitabuMkusanyiko);
 
   return (
-    <Wrapper>
-      <BackgroundImage imgUrl={Vijitabu}>
-        <RudiNyuma href="http://localhost:3000/">
-          <Icon name="IoArrowBack" size={20} color="white" /> Rudi
-        </RudiNyuma>
-      </BackgroundImage>
-      <VitabuLayout>
-        <>
-          <TitleText>Vijitabu</TitleText>
-          <TitleLine />
-        </>
-        <Orodha>
-          {vitabuMkusanyiko.map((kitabu: BookData, i) => {
-            return (
-              <Kitabu key={i}>
-                <NormalText>{kitabu.title}</NormalText>
-                <Button name="BONYEZA HAPA KUSOMA" link={kitabu.title} />
-              </Kitabu>
-            );
-          })}
-        </Orodha>
-      </VitabuLayout>
-    </Wrapper>
+    <BackgroundWrapper>
+      <Wrapper>
+        <BackgroundImage imgUrl={Vijitabu}>
+          <Link to="/" style={{ textDecoration: "none" }}>
+            <RudiNyuma>
+              <Icon name="IoArrowBack" size={20} color="white" /> Rudi
+            </RudiNyuma>
+          </Link>
+        </BackgroundImage>
+        <VitabuLayout>
+          <>
+            <TitleText>Vijitabu</TitleText>
+            <TitleLine />
+          </>
+          <Orodha>
+            {vitabuMkusanyiko.map((kitabu: BookData, i) => {
+              return (
+                <Kitabu key={i}>
+                  <NormalText>{kitabu.title}</NormalText>
+                  <ButtonRedirect
+                    name="BONYEZA HAPA KUSOMA"
+                    link={kitabu.file ? kitabu.file : ""}
+                  />
+                </Kitabu>
+              );
+            })}
+          </Orodha>
+        </VitabuLayout>
+      </Wrapper>
+    </BackgroundWrapper>
   );
 };
 
@@ -85,6 +94,7 @@ const Wrapper = styled.div`
   height: 100vh;
   display: grid;
   grid-template-columns: 1fr 4fr;
+  background: #8cb1de;
 `;
 const Orodha = styled.div`
   padding: 32px;
@@ -92,7 +102,7 @@ const Orodha = styled.div`
   grid-gap: 1rem;
   grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
 `;
-const RudiNyuma = styled.a`
+const RudiNyuma = styled.div`
   text-decoration: none;
   display: flex;
   gap: 4px;
@@ -137,12 +147,9 @@ const TitleLine = styled.div`
   margin: 5px 22px;
   align-self: center;
 `;
-const ImagWrapper = styled.div`
-  width: fit-content;
-  filter: drop-shadow(-6px -1px 10px rgba(0, 0, 0, 0.25));
-  @media (max-width: 990px) {
-    display: none;
-  }
+const BackgroundWrapper = styled.div`
+  background: #8cb1de;
+  height: 176vh;
 `;
 
 const TitleText = styled.div`

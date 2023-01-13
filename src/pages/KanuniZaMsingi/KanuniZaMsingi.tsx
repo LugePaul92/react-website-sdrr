@@ -4,6 +4,7 @@ import Kanuni from "./Kanuni.jpg";
 import Sinai from "./Sinai-smaller.webp";
 import { Image } from "../../components";
 import { Icon } from "../../components/Icons";
+import { Link } from "react-router-dom";
 export const KanuniZaMsingi = () => {
   const kanuniText: string[] = [
     "1. Kuna Mungu mmoja, nafsi hai, halisi, aliye Muumbaji, chimbuko,mtegemezaji, juu ya yote, na Baba wa wote. Mungu kwa asili hafikwi na mauti, mwenye enzi zote, mwenye kujua yote, na aliyepo kila mahali kwa njia ya mwakilishi wake, Roho Mtakatifu. Hana kikomo, ni wa milele na asiyebadilika, ni mwenye haki na mtakatifu, mwingi wa huruma, mwenye fadhili, si mwepesi wa hasira, mwingi wa rehema na upendo na kweli. Ingawaje Mungu anapita ufahamu wetu, kwa kiasi aweza kujulikana kwa tabia na uwezo vilivyooneshwa ndani ya Mwana wake wa pekee na pia ufunuo wa Baba. Yu astahili kuabudiwa, kusujudiwa, na kutumikiwa na wote milele zote.",
@@ -54,9 +55,9 @@ export const KanuniZaMsingi = () => {
         <Image width="100vw" height="100vh" src={Kanuni} />
       </ImageWrapper>
       <Background>
-        <RudiNyuma href="http://localhost:3000/">
+        <Link to="/">
           <Icon name="IoArrowBack" size={20} color="white" /> Rudi
-        </RudiNyuma>
+        </Link>
         <TitleText>Kanuni za Msingi za SEVENTH DAY REFORMED REMNANTS</TitleText>
         <PreNormalText>
           “Mmejengwa juu ya msingi wa mitume na manabii, naye Kristo Yesu

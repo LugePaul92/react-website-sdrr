@@ -9,13 +9,15 @@ interface ButtonProps {
   color?: string;
   background?: string;
 }
-export const Button = (props: ButtonProps) => {
+export const ButtonRedirect = (props: ButtonProps) => {
   return (
-    <Link to={props.link} style={{ textDecoration: "none" }}>
-      <ButtonWrapper onClick={props.onClick} background={props.background}>
-        {props.name}
-      </ButtonWrapper>
-    </Link>
+    <a href={props.link} style={{ textDecoration: "none" }}>
+      <ButtonLink>
+        <ButtonWrapper onClick={props.onClick} background={props.background}>
+          {props.name}
+        </ButtonWrapper>
+      </ButtonLink>
+    </a>
   );
 };
 const ButtonLink = styled.a`

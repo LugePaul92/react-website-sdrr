@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { Icon } from "../../components/Icons";
 
@@ -6,9 +7,9 @@ export const JuuYetu = () => {
   return (
     <Wrapper>
       <TitleBlock>
-        <RudiNyuma href="http://localhost:3000/">
+        <Link to="/">
           <Icon name="IoArrowBack" size={20} color="white" /> Rudi
-        </RudiNyuma>
+        </Link>
         <TitleText>JUU YETU</TitleText>
       </TitleBlock>
       <DetailBlock>
@@ -47,18 +48,18 @@ export const JuuYetu = () => {
   );
 };
 
-const RudiNyuma = styled.a`
-  text-decoration: none;
-  display: flex;
-  gap: 4px;
-  color: white;
-  background: #23395d;
-  padding: 12px;
-  border-radius: 6px;
-  max-width: 60px;
-  position: absolute;
-  top: 10px;
-`;
+// const RudiNyuma = styled.a`
+//   text-decoration: none;
+//   display: flex;
+//   gap: 4px;
+//   color: white;
+//   background: #23395d;
+//   padding: 12px;
+//   border-radius: 6px;
+//   max-width: 60px;
+//   position: absolute;
+//   top: 10px;
+// `;
 
 const Wrapper = styled.div`
   display: grid;

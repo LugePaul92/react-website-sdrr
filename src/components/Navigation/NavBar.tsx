@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { Image } from "../Image";
 import LogoImage from "./Logo.png";
 import MenuMobile from "./hamburger-menu.png";
+import { Link } from "react-router-dom";
 export const NavBar = () => {
   const [navLinkIsOPen, navLinkToggle] = useState(false);
   const handleNavLinksToggle = () => {
@@ -15,35 +16,35 @@ export const NavBar = () => {
         <Image src={LogoImage} width="236px" height="98px" />
       </LogoWrapper>
       <DesktopNavLink>
-        <RefLink href="http://localhost:3000/">
-          <Link>Nyumbani</Link>
-        </RefLink>
-        <RefLink href="http://localhost:3000/vitabu">
-          <Link>Kupakua</Link>
-        </RefLink>
-        <RefLink href="http://localhost:3000/kanuni-za-misingi">
-          <Link>Kanuni za Msingi</Link>
-        </RefLink>
-        <Link>Shuhuda</Link>
-        <RefLink href="http://localhost:3000/juu-yetu">
-          <Link>Juu yetu</Link>
-        </RefLink>
+        <Link to="/" style={{ textDecoration: "none" }}>
+          <LinkComponent>Nyumbani</LinkComponent>
+        </Link>
+        <Link to="/vitabu" style={{ textDecoration: "none" }}>
+          <LinkComponent>Kupakua</LinkComponent>
+        </Link>
+        <Link to="/kanuni-za-misingi" style={{ textDecoration: "none" }}>
+          <LinkComponent>Kanuni za Msingi</LinkComponent>
+        </Link>
+        <LinkComponent>Shuhuda</LinkComponent>
+        <Link to="/juu-yetu" style={{ textDecoration: "none" }}>
+          <LinkComponent>Juu yetu</LinkComponent>
+        </Link>
       </DesktopNavLink>
       {navLinkIsOPen && (
         <NavLinks>
-          <RefLink href="http://localhost:3000/">
-            <Link>Nyumbani</Link>
-          </RefLink>
-          <RefLink href="http://localhost:3000/vitabu">
-            <Link>Kupakua</Link>
-          </RefLink>
-          <RefLink href="http://localhost:3000/kanuni-za-misingi">
-            <Link>Kanuni za Msingi</Link>
-          </RefLink>
-          <Link>Shuhuda</Link>
-          <RefLink href="http://localhost:3000/juu-yetu">
-            <Link>Juu yetu</Link>
-          </RefLink>
+          <Link to="/" style={{ textDecoration: "none" }}>
+            <LinkComponent>Nyumbani</LinkComponent>
+          </Link>
+          <Link to="/vitabu" style={{ textDecoration: "none" }}>
+            <LinkComponent>Kupakua</LinkComponent>
+          </Link>
+          <Link to="/kanuni-za-misingi" style={{ textDecoration: "none" }}>
+            <LinkComponent>Kanuni za Msingi</LinkComponent>
+          </Link>
+          <LinkComponent>Shuhuda</LinkComponent>
+          <Link to="/juu-yetu" style={{ textDecoration: "none" }}>
+            <LinkComponent>Juu yetu</LinkComponent>
+          </Link>
         </NavLinks>
       )}
       <MenuWrapper onClick={handleNavLinksToggle}>
@@ -81,10 +82,10 @@ const NavLinks = styled.ul`
     top: 9vh;
   }
 `;
-const RefLink = styled.a`
-  text-decoration: none;
-`;
-const Link = styled.li`
+// const Link = styled.a`
+//   text-decoration: none;
+// `;
+const LinkComponent = styled.li`
   font-weight: 500;
   font-size: 21px;
   text-transform: uppercase;
