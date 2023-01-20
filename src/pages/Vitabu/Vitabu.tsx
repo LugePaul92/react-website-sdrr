@@ -5,65 +5,38 @@ import { Card, Image } from "../../components";
 import { Button } from "../../components/Buttons/Button";
 import { ButtonRedirect } from "../../components/Buttons/ButtonRedirect";
 import { Icon } from "../../components/Icons";
+import Tabs from "../../components/Tabs/Components/Tabs";
+import { TabComponent } from "../../components/Tabs/TabComponent";
+import { arrayVitabu } from "./arrayVitabu";
 import Vijitabu from "./vitabu.jpg";
-interface Kitabu {
-  title: string;
-  link: string;
-}
-
-interface BookData {
-  author?: string;
-  createdAt: string;
-  file?: string;
-  title?: string;
-  updatedAt: string;
-  _id: string;
-}
 
 export const Vitabu = () => {
   const [b, setb] = useState<any>([]);
 
-  useEffect(() => {
-    fetch("http://143.110.186.33:1337/books/get")
-      .then((response) => response.json())
-      .then((kitabu) => {
-        setb(kitabu.books);
-      });
-  }, []);
-  let vitabuMkusanyiko: BookData[] = b;
-  console.log("Vitabu", vitabuMkusanyiko);
+  // useEffect(() => {
+  //   fetch("http://143.110.186.33:1337/books/get")
+  //     .then((response) => response.json())
+  //     .then((kitabu) => {
+  //       setb(kitabu.books);
+  //     });
+  // }, []);
+  // console.log("Vitabu", vitabuMkusanyiko);
 
   return (
-    <BackgroundWrapper>
-      <Wrapper>
-        <BackgroundImage imgUrl={Vijitabu}>
-          <Link to="/" style={{ textDecoration: "none" }}>
-            <RudiNyuma>
-              <Icon name="IoArrowBack" size={20} color="white" /> Rudi
-            </RudiNyuma>
-          </Link>
-        </BackgroundImage>
-        <VitabuLayout>
-          <>
-            <TitleText>Vijitabu</TitleText>
-            <TitleLine />
-          </>
-          <Orodha>
-            {vitabuMkusanyiko.map((kitabu: BookData, i) => {
-              return (
-                <Kitabu key={i}>
-                  <NormalText>{kitabu.title}</NormalText>
-                  <ButtonRedirect
-                    name="BONYEZA HAPA KUSOMA"
-                    link={kitabu.file ? kitabu.file : ""}
-                  />
-                </Kitabu>
-              );
-            })}
-          </Orodha>
-        </VitabuLayout>
-      </Wrapper>
-    </BackgroundWrapper>
+    <Wrapper>
+      <BackgroundImage imgUrl={Vijitabu}>
+        <Link to="/" style={{ textDecoration: "none" }}>
+          <RudiNyuma>
+            <Icon name="IoArrowBack" size={20} color="white" /> Rudi
+          </RudiNyuma>
+        </Link>
+      </BackgroundImage>
+      <VitabuLayout>
+        <>
+          <TabComponent />
+        </>
+      </VitabuLayout>
+    </Wrapper>
   );
 };
 

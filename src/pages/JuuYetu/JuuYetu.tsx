@@ -7,10 +7,15 @@ export const JuuYetu = () => {
   return (
     <Wrapper>
       <TitleBlock>
-        <Link to="/">
-          <Icon name="IoArrowBack" size={20} color="white" /> Rudi
-        </Link>
-        <TitleText>JUU YETU</TitleText>
+        <LinkWRapper>
+          <Link to="/" style={{ textDecoration: "none" }}>
+            <RudiNyuma>
+              <Icon name="IoArrowBack" size={20} color="white" /> Rudi
+            </RudiNyuma>
+          </Link>
+        </LinkWRapper>
+
+        <TitleText>Juu Yetu</TitleText>
       </TitleBlock>
       <DetailBlock>
         <SemiTitleText>
@@ -66,7 +71,20 @@ const Wrapper = styled.div`
   grid-template-columns: 1fr 4fr 2fr;
   height: 100vh;
 `;
-
+const RudiNyuma = styled.div`
+  text-decoration: none;
+  display: flex;
+  gap: 4px;
+  color: white;
+  background: #23395d;
+  padding: 12px;
+  border-radius: 6px;
+  max-width: 60px;
+`;
+const LinkWRapper = styled.div`
+  position: fixed;
+  top: 10px;
+`;
 const TitleBlock = styled.div`
   background: #0081c9;
   display: flex;

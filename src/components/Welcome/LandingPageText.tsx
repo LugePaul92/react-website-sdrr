@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { Button } from "../Buttons/Button";
 export const LandingPageText = () => {
@@ -12,11 +13,7 @@ export const LandingPageText = () => {
           mkuu na kanisa la wazaliwa wa kwanza walioandikwa mbinguni….” (Ebr
           12:22-24)
         </ItalicText>
-        <Button
-          background="#00A4E9"
-          name="JIFUNZE ZAIDI"
-          link="http://localhost:3000/vitabu"
-        />
+        <Button background="#00A4E9" name="JIFUNZE ZAIDI" link="/vitabu" />
       </Layout>
     </Wrapper>
   );

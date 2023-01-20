@@ -25,7 +25,9 @@ export const NavBar = () => {
         <Link to="/kanuni-za-misingi" style={{ textDecoration: "none" }}>
           <LinkComponent>Kanuni za Msingi</LinkComponent>
         </Link>
-        <LinkComponent>Shuhuda</LinkComponent>
+        <Link to="/matoleo" style={{ textDecoration: "none" }}>
+          <LinkComponent>Matoleo</LinkComponent>
+        </Link>
         <Link to="/juu-yetu" style={{ textDecoration: "none" }}>
           <LinkComponent>Juu yetu</LinkComponent>
         </Link>
@@ -41,7 +43,9 @@ export const NavBar = () => {
           <Link to="/kanuni-za-misingi" style={{ textDecoration: "none" }}>
             <LinkComponent>Kanuni za Msingi</LinkComponent>
           </Link>
-          <LinkComponent>Shuhuda</LinkComponent>
+          <Link to="/matoleo" style={{ textDecoration: "none" }}>
+            <LinkComponent>Matoleo</LinkComponent>
+          </Link>
           <Link to="/juu-yetu" style={{ textDecoration: "none" }}>
             <LinkComponent>Juu yetu</LinkComponent>
           </Link>

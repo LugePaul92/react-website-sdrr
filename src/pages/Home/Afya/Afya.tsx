@@ -29,7 +29,7 @@ export const Afya = () => {
                   <Button
                     background="#00A4E9"
                     name="JIFUNZE ZAIDI"
-                    link="http://localhost:3000/vitabu"
+                    link="/vitabu"
                   />
                 </TextWrapper>
               </ContentWrapper>

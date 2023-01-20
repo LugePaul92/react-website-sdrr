@@ -108,11 +108,7 @@ const ContentCardOne = () => {
           -Zama ndani katika mada nyeti juu ya namna unavyoweza kuwa tayari kwa
           mambo yanayokuja
         </div>
-        <Button
-          background="#00A4E9"
-          name="JIFUNZE ZAIDI"
-          link="http://localhost:3000/vitabu"
-        />
+        <Button background="#00A4E9" name="JIFUNZE ZAIDI" link="/vitabu" />
       </TextWrapper>
     </>
   );
