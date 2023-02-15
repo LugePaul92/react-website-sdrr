@@ -7,7 +7,7 @@ import { ButtonRedirect } from "../../components/Buttons/ButtonRedirect";
 import { Icon } from "../../components/Icons";
 import Tabs from "../../components/Tabs/Components/Tabs";
 import { TabComponent } from "../../components/Tabs/TabComponent";
-import { arrayVitabu } from "./arrayVitabu";
+// import { arrayVitabu } from "./arrayVitabu";
 import Vijitabu from "./vitabu.jpg";
 
 export const Vitabu = () => {

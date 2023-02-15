@@ -28,6 +28,13 @@ const TabOne: FC<{}> = () => {
           <TitleLine />
         </Wrapper> */}
         <Orodha>
+          <Kitabu>
+            <NormalText>Testing</NormalText>
+            <ButtonRedirect
+              name="BONYEZA HAPA KUSOMA"
+              link="https://firebasestorage.googleapis.com/v0/b/uploading-files-sdrr.appspot.com/o/booklets%2FSDRR--1%20(KUBADILISHA%20MALAIKA%20WATATU).pdf?alt=media&token=6c70813e-2ddf-4bd4-87cf-fb650c05e029"
+            />
+          </Kitabu>
           {vitabuMkusanyiko.map((kitabu: BookData, i) => {
             return (
               <Kitabu key={i}>
